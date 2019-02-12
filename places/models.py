@@ -6,9 +6,9 @@ class Countries(models.Model):
 
 class Cities(models.Model):
 	city_name=models.CharField(max_length=200)
-	country_id=models.ForeignKey(Countries)
+	country_id=models.ForeignKey(Countries ,on_delete=None)
 
 class Locations(models.Model):
     location_name=models.CharField(max_length=200)
-    city_id=models.ForeignKey(Cities)
+    city_id=models.ForeignKey(Cities, on_delete=None)
 
