@@ -7,6 +7,7 @@ class Countries(models.Model):
 class Cities(models.Model):
 	city_name=models.CharField(max_length=200)
 	country_id=models.ForeignKey(Countries ,on_delete=None)
+	city_rate=models.IntegerField()
 
 class Locations(models.Model):
     location_name=models.CharField(max_length=200)
