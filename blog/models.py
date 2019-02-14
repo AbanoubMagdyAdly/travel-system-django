@@ -10,6 +10,7 @@ class User_Experiences(models.Model):
     city_id = models.ForeignKey(Cities.Cities, on_delete=None)
     user_id = models.ForeignKey(Users.Users, on_delete=None)
     description = models.CharField(max_length=1000)
+    rate = models.IntegerField(default=0)
 
 
 class Comments(models.Model):
