@@ -19,11 +19,13 @@ from django.contrib import admin
 from django.conf.urls import url
 from home import views as home
 from blog import views as blog
+from hotel_reservation import views as reservation
 
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^$', home.index),
     url(r'^blog/$',blog.blog),
+    url(r'^reservation/$',reservation.reservation),
     # url(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root': path.join(path.dirname(__file__), 'static')}),
 
 ]
