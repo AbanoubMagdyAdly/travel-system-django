@@ -19,8 +19,12 @@ class Cities(models.Model):
 class Locations(models.Model):
     location_name = models.CharField(max_length=200)
     city = models.ForeignKey(Cities, on_delete=None)
+    def __str__(self):
+        return self.location_name
 
 class Hotel(models.Model):
     hotel_name = models.CharField(max_length=200)
     hotel_ranking = models.IntegerField()
     city = models.ForeignKey(Cities, on_delete=None)
+    def __str__(self):
+        return self.hotel_name
