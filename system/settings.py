@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "travelsystem",
         'USER': "root",
-        'PASSWORD': "12345678"
+        'PASSWORD': "cd4511"
     }
 }
 
