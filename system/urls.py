@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.conf.urls import url
 from home import views as home
 from blog import views as blog
+from places import views as places
 from hotel_reservation import views as reservation
 
 urlpatterns = [
@@ -26,6 +27,8 @@ urlpatterns = [
     url(r'^$', home.index),
     url(r'^blog/$',blog.blog),
     url(r'^reservation/$',reservation.reservation),
+    url(r'^city/$',places.city),
+
     # url(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root': path.join(path.dirname(__file__), 'static')}),
 
 ]
