@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import pymysql
+# import pymysql
 
-pymysql.install_as_MySQLdb()
+# pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +27,7 @@ SECRET_KEY = 'hscuqu+##b*ui&-b8g&pew1$3chi!87i(85-$h-n#ei%8%q2&c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.16.1.143','127.0.0.1']
 
 # Application definition
 
@@ -129,3 +129,6 @@ USE_TZ = True
 STATIC_URL = os.path.join(BASE_DIR, "system/static/")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "system/static/"), ]
 
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
