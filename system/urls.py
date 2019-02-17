@@ -20,12 +20,15 @@ from django.conf.urls import url
 from home import views as home
 from blog import views as blog
 from hotel_reservation import views as reservation
+from car_rental import views as rental
 
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^$', home.index),
-    url(r'^blog/$',blog.blog),
-    url(r'^reservation/$',reservation.reservation),
+    url(r'^blog/$',blog.blog,name='blog'),
+    url(r'^reservation/$',reservation.reservation,name='reservation'),
+    url(r'^rental/$',rental.rental,name='rental'),
+
     # url(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root': path.join(path.dirname(__file__), 'static')}),
 
 ]

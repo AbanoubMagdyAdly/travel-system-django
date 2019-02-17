@@ -3,15 +3,15 @@ from .models import Countries, Cities, Locations, Hotel
 
 
 class InlineCities(admin.StackedInline):
-	extra = 1
+	extra = 8
 	model = Cities
 
 class InlineLocations(admin.StackedInline):
-	extra = 1
+	extra = 4
 	model = Locations
 
 class InlineHotel(admin.StackedInline):
-	extra = 1
+	extra = 4
 	model = Hotel
 
 class CustomCountries(admin.ModelAdmin):

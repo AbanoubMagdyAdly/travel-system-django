@@ -4,12 +4,14 @@ from django.db import models
 # Create your models here.
 class Countries(models.Model):
     country_name = models.CharField(max_length=200)
+    country_description = models.CharField(max_length=1500, default="any thing")
     def __str__(self):
 	       return self.country_name
 
 
 class Cities(models.Model):
     city_name = models.CharField(max_length=200)
+    city_description = models.CharField(max_length=1500, default="any thing")
     city_rate = models.IntegerField(default=0)
     country = models.ForeignKey(Countries, on_delete=None)
     def __str__(self):

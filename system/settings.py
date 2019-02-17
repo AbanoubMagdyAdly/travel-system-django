@@ -128,4 +128,3 @@ USE_TZ = True
 
 STATIC_URL = os.path.join(BASE_DIR, "system/static/")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "system/static/"), ]
-
