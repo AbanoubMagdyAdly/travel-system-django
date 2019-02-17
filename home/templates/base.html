@@ -40,24 +40,24 @@
           <div class="col-6 col-xl-2 text-right">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                {% if user.is_authenticated %}
-                <li class="nav-item">
+                {% if user.is_authenticated%}
+                  <li class="nav-item">
                     <a class="nav-link btn-outline-secondary" href="/profile">Profile</a>
-                </li>
-                <li>
+                  </li>
+                  <li>
                     <a class="nav-link btn-outline-secondary" href="{% url 'logout' %}">Logout</a>
-                </li>
-                <li>
+                  </li>
+                  <li>
                   <label style="margin-left:30px;margin-top:7px;color:gray">Hi,{{ user.username }}</label>
-                </li>
-              {% else %}
-              {% if request.get_full_path == '/accounts/login/' %}
-                <li style="margin-right:10px;">
-                  <a href="accounts/registeration">Signup</a>
-                </li>
+                  </li>
                 {% else %}
+              {% if not request.get_full_path == '/register' %}
+                <li style="margin-right:10px;">
+                  <a href="{% url 'register' %}">Signup</a>
+                {% endif %}
+                {% if not request.get_full_path == '/accounts/login/' %}
                 <li >
-                  <a href="/accounts/login">Login</a>
+                  <a href="{% url 'login' %}">Login</a>
                 </li>
                 {% endif %}
                 {% endif %}
