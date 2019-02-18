@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Users
 
-
 class CustomUsers(admin.ModelAdmin):
     fieldsets = (
         ['User Info',{'fields':['user_name','user_password','user_email','user_is_blocked']}],
