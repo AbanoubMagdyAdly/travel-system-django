@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^blog/$',blog.blog,name='blog'),
     url(r'^reservation/$',reservation.reservation,name='reservation'),
     url(r'^rental/$',rental.rental,name='rental'),
+    url(r'^city/$',places.city),
 
 ]
