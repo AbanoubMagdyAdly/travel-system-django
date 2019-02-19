@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from places.models import Countries
 
 def index(request):
-    return render(request, 'index.html')
+    country_DB = Countries.objects.all()
+    context = {'allcountries': country_DB}
+    return render(request, 'index.html',context)
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
