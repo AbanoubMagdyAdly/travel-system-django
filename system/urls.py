@@ -34,7 +34,8 @@ urlpatterns = [
 
 
 
-    url(r'^countries/$',places.all_countries,name='all_countries'),
+    # url(r'^countries/$',places.all_countries,name='all_countries'),
     url(r'^country/(?P<country_id>[0-9]+)$',places.single_country,name='single_country'),
+    url(r'^country/(?P<country_id>[0-9]+)/city/(?P<city_id>[0-9]+)$',places.single_city,name='single_city'),
     url(r'^locations/(?P<city_id>[0-9]+)$',places.locations,name='locations')
 ]
