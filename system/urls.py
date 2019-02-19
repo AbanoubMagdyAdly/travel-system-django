@@ -28,11 +28,11 @@ urlpatterns = [
     url('', include('authentication.urls')),
     url(r'^$', home.index),
     url(r'^blog/$',blog.blog,name='blog'),
-    url(r'^reservation/$',reservation.reservation,name='reservation'),
+    # url(r'^reservation/$',reservation.reservation,name='reservation'),
     url(r'^rental/$',rental.rental,name='rental'),
     #url(r'^City/(?P<city_id>[0-9]+)$',places.city,name='single_city')
 
-
+    url(r'^country/(?P<country_id>[0-9]+)/city/(?P<city_id>[0-9]+)/reservation$', reservation.reservation, name='reservation'),
 
     url(r'^countries/$',places.all_countries,name='all_countries'),
     url(r'^country/(?P<country_id>[0-9]+)$',places.single_country,name='single_country'),
