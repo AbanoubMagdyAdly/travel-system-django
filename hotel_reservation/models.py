@@ -11,3 +11,4 @@ class Reservations(models.Model):
     no_of_persons = models.IntegerField()
     from_date = models.DateField(default=None)
     to_date = models.DateField(default=None)
+

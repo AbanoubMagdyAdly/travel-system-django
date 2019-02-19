@@ -1,22 +1,21 @@
 from django.contrib import admin
 from .models import Countries, Cities, Locations, Hotel
 
-
 class InlineCities(admin.StackedInline):
-	extra = 1
+	extra = 8
 	model = Cities
 
 class InlineLocations(admin.StackedInline):
-	extra = 1
+	extra = 4
 	model = Locations
 
 class InlineHotel(admin.StackedInline):
-	extra = 1
+	extra = 4
 	model = Hotel
 
 class CustomCountries(admin.ModelAdmin):
     fieldsets = (
-        ['Country Info',{'fields':['country_name']}],
+        ['Country Info',{'fields':['country_name','country_description']}],
     )
     inlines = [InlineCities]
     list_display = ('country_name',)
@@ -25,7 +24,7 @@ class CustomCountries(admin.ModelAdmin):
 
 class CustomCities(admin.ModelAdmin):
     fieldsets = (
-        ['City Info',{'fields':['city_name','city_rate']}],
+        ['City Info',{'fields':['city_name','city_description','city_rate','city_image']}],
         ['Country',{'fields':['country']}]
     )
     inlines = [InlineLocations,InlineHotel]
