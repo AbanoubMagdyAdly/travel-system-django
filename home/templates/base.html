@@ -28,7 +28,9 @@
             {#<li><a href="about.html">About</a></li>#}
             <li><a href="/blog">Blog</a></li>
             {#<li><a href="contact.html">Contact</a></li>#}
-            <li><a href="/reservation">Book Online</a></li>
+             {% if show == "True" %}
+            <li><a href="./{{ city.id }}/reservation">Book Online</a></li>
+            {% endif %}
           </ul>
         </nav>
       </div>
