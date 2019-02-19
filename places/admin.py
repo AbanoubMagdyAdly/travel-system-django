@@ -26,31 +26,31 @@ class CustomCountries(admin.ModelAdmin):
 class CustomCities(admin.ModelAdmin):
     fieldsets = (
         ['City Info',{'fields':['city_name','city_rate']}],
-        ['Country',{'fields':['country']}]
+        ['Country',{'fields':['country_id']}]
     )
     inlines = [InlineLocations,InlineHotel]
     list_display = ('city_name', 'city_rate')
     search_fields = ['city_name']
-    list_filter = ['city_rate','country','city_name']
+    list_filter = ['city_rate','country_id','city_name']
 
 
 class CustomLocations(admin.ModelAdmin):
     fieldsets = (
         ['Location Info',{'fields':['location_name']}],
-        ['City',{'fields':['city']}]
+        ['City',{'fields':['city_id']}]
     )
     list_display = ('location_name',)
     search_fields = ['location_name']
-    list_filter = ['location_name','city']
+    list_filter = ['location_name','city_id']
 
 class CustomHotel(admin.ModelAdmin):
     fieldsets = (
         ['Hotel Info',{'fields':['hotel_name','hotel_ranking']}],
-        ['City',{'fields':['city']}]
+        ['City',{'fields':['city_id']}]
     )
     list_display = ('hotel_name','hotel_ranking')
     search_fields = ['hotel_name']
-    list_filter = ['hotel_ranking','hotel_name','city']
+    list_filter = ['hotel_ranking','hotel_name','city_id']
 
 # Register your models here.
 admin.site.register(Countries, CustomCountries)

@@ -1,0 +1,12 @@
+<html>
+
+<h1>all countries</h1>
+
+
+    {% for i in allcountries %}
+        <a href="{% url 'single_country' i.id %}">{{i.country_name}}</a>
+    {% endfor %}
+
+
+
+</html>

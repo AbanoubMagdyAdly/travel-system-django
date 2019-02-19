@@ -1,0 +1,13 @@
+<html>
+    <h1>this is city page</h1>
+
+     {% for j in city %}
+        <a href="{% url 'locations' j.id %}">{{j.city_name}}</a>
+     {% endfor %}
+
+
+
+
+
+</html>
+

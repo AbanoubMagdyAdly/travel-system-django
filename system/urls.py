@@ -30,6 +30,11 @@ urlpatterns = [
     url(r'^blog/$',blog.blog,name='blog'),
     url(r'^reservation/$',reservation.reservation,name='reservation'),
     url(r'^rental/$',rental.rental,name='rental'),
-    url(r'^city/$',places.city),
+    #url(r'^City/(?P<city_id>[0-9]+)$',places.city,name='single_city')
 
+
+
+    url(r'^countries/$',places.all_countries,name='all_countries'),
+    url(r'^country/(?P<country_id>[0-9]+)$',places.single_country,name='single_country'),
+    url(r'^locations/(?P<city_id>[0-9]+)$',places.locations,name='locations')
 ]

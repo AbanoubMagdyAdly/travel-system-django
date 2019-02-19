@@ -331,5 +331,14 @@
 
   <script src="{% static 'js/main.js'%}"></script>
 
+  	{% for one in city %}
+
+
+             <a href="{% url 'single_city' one.id %}"> Display </a>
+                <h1>{{one.city_name}} </h1>
+
+    {% endfor %}
+
+
   </body>
 </html>
