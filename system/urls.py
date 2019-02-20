@@ -33,6 +33,7 @@ urlpatterns = [
     #url(r'^City/(?P<city_id>[0-9]+)$',places.city,name='single_city')
 
     url(r'^country/(?P<country_id>[0-9]+)/city/(?P<city_id>[0-9]+)/reservation$', reservation.reservation, name='reservation'),
+    url(r'^country/(?P<country_id>[0-9]+)/city/(?P<city_id>[0-9]+)/rental$', rental.rental, name='car'),
 
     # url(r'^countries/$',places.all_countries,name='all_countries'),
     url(r'^country/(?P<country_id>[0-9]+)$',places.single_country,name='single_country'),
