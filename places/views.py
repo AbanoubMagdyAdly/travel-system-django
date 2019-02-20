@@ -8,7 +8,6 @@ def single_country(request, country_id):
     country_DB = Countries.objects.all()
     country= Countries.objects.get(id=eval(country_id))
     city_DB = Cities.objects.filter(country_id=eval(country_id))
-    print(city_DB)
     context = {'city': city_DB, 'allcountries': country_DB,'country':country}
     return render(request, "single_country.html", context)
 
