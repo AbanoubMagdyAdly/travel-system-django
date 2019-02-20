@@ -4,6 +4,7 @@ from django.db import models
 class Countries(models.Model):
     country_name = models.CharField(max_length=200)
     country_description = models.CharField(max_length=1500,default="text")
+    country_rate=models.IntegerField(default=0)
     def __str__(self):
 	       return self.country_name
 

@@ -1,11 +1,15 @@
+
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
-from places.models import Countries
+from places.models import *
 
 def index(request):
+    topcountry = Countries.objects.all().order_by('-country_rate')[:5]
+    topcity = Cities.objects.all().order_by('-city_rate')[:5]
     country_DB = Countries.objects.all()
-    context = {'allcountries': country_DB}
+    context = {'allcountries': country_DB,'topcity': topcity,'topcountry':topcountry}
     return render(request, 'index.html',context)
 
 def register(request):
