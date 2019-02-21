@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'users.apps.UsersConfig',  # for custom user form
 ]
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -132,3 +133,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "system/static/"), ]
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
+
+# AUTH_USER_MODEL = 'users.CustomUser'  # for custom user form
+
+
+# for custom user form
+## lines 46, 137 in settings.py
+## lines 16, 17 in models.py
+## forms.py
+## line 25 in urls.py
