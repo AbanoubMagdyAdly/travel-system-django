@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{%  load staticfiles %}
+{% block body_block %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Travalers &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700">
+    <link rel="stylesheet" href="{% static  'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+    <link rel="stylesheet" href="{% static 'css/aos.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+  <body>
+
+    <div class="slide-one-item home-slider owl-carousel">
+      <div class="site-blocks-cover overlay" style="background-image: url({% static  'images/cities/'%}{{ s_city.city_name }}.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section">
+      <div class="container">
+          <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+            <div class="h-entry">
+              {% for usr in all_users %}
+                {% if usr.id == single_experience.user_id_id %}
+                  <img src="{% static usr.user_image %}" width="50" height="50" style="border-radius: 50%;"></img>
+                  <h2 style="display:inline-block ; color:blue ;"> {{ usr.user_name }} </h2>
+                {% endif %}
+              {% endfor %}
+              <h2> {{ single_experience.add_your_experience }} </h2>
+              {% for comment in comments_all %}
+                {% for usr in all_users %}
+                  {% if usr.id == comment.user_id_id %}
+                    <img src="{% static usr.user_image %}" width="50" height="50" style="margin-left:10%; border-radius: 50%;"></img>
+                    <h2 style="display:inline-block ; color:blue ;"> {{ usr.user_name }} </h2>
+                  {% endif %}
+                {% endfor %}
+                <p style="margin-left:10%"> {{ comment.add_your_comment }} </p>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row" style="background-color:#d9cecb ; height:150px">
+          <div class="col-12 text-center">
+            <h1 style="margin:align-center"></h1>
+            <form method="POST">{% csrf_token %}
+              {{ form2.as_p }}        
+              <button type="submit">POST</button>
+            </form>
+          </div>
+        </div>
+
+  </body>
+</html>
+{% endblock %}

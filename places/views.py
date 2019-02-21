@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from blog.models import User_Experiences
 
 
 # Create your views here.
@@ -13,10 +14,11 @@ def single_country(request, country_id):
 
 
 def single_city(request, country_id, city_id):
+    exp_all = User_Experiences.objects.filter(city_id=city_id)[:2]
     loc = Locations.objects.filter(city_id=eval(city_id))
     city = Cities.objects.get(id=eval(city_id))
     country_DB = Countries.objects.all()
-    context = {'location': loc, 'allcountries': country_DB, 'city': city, 'country_id': country_id,'show':"True"}
+    context = {'location': loc, 'allcountries': country_DB, 'city': city, 'country_id': country_id,'show':"True",'exp_all':exp_all}
     # if city.country_id == country_id:
     return render(request, "city_page.html", context)
     # else:
