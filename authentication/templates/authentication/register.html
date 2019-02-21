@@ -43,8 +43,8 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Sign Up</h5>
-                        <form class="form-signin" method="POST" action="{% url 'register' %}">{% csrf_token %}
-                            
+                        <form class="form-signup" method="POST" action="{% url 'register' %}">{% csrf_token %}
+                            {{ form.errors }}
 
                             <div class="form-label-group">
                                 <label for="inputEmail" style="margin-right:70px">Username</label>
@@ -62,7 +62,7 @@
                             </div>
                             <br>
     
-                            <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="login"></input>
+                            <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="signup"></input>
                             <input type="hidden" name="next" value="{{ next }}">
                         </form>
                     </div>

@@ -22,6 +22,7 @@ from blog import views as blog
 from places import views as places
 from hotel_reservation import views as reservation
 from car_rental import views as rental
+# from django.contrib.auth.forms import AuthenticationFormWithChekUsersStatus   # for custom user form
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -39,5 +40,7 @@ urlpatterns = [
     # url(r'^countries/$',places.all_countries,name='all_countries'),
     url(r'^country/(?P<country_id>[0-9]+)$',places.single_country,name='single_country'),
     url(r'^country/(?P<country_id>[0-9]+)/city/(?P<city_id>[0-9]+)$',places.single_city,name='single_city'),
-    url(r'^locations/(?P<city_id>[0-9]+)$',places.locations,name='locations')
+    url(r'^locations/(?P<city_id>[0-9]+)$',places.locations,name='locations'),
+    # url(r'^login/$', auth_views.LoginView.as_view(authentication_form=AuthenticationFormWithChekUsersStatus)),   #######added for user blocking functionality##########
+
 ]

@@ -38,6 +38,10 @@
                         <h5 class="card-title text-center">Sign In</h5>
                         <form class="form-signin" method="POST" action="{% url 'login' %}">{% csrf_token %}
                             <div class="form-label-group">
+                                {{ form.errors }}
+                                {% if not request.user.is_active and request.user.is_authenticated %}
+                                    <h1>You are blocked!</h1>
+                                {% endif %}
                                 <label for="inputEmail" style="margin-right:10px">Username</label>
                                 {{ form.username }}
                             </div>
