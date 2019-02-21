@@ -6,10 +6,11 @@ from django.contrib.auth import authenticate, login
 from places.models import *
 
 def index(request):
-    topcountry = Countries.objects.all().order_by('-country_rate')[:5]
-    topcity = Cities.objects.all().order_by('-city_rate')[:5]
+    topcountry = Countries.objects.all().order_by('-country_rate')[:6]
+    topcity = Cities.objects.all().order_by('-city_rate')[:6]
     country_DB = Countries.objects.all()
-    context = {'allcountries': country_DB,'topcity': topcity,'topcountry':topcountry}
+    city=Cities.objects.all()
+    context = {'allcountries': country_DB,'topcity': topcity,'topcountry':topcountry,'city':city}
     return render(request, 'index.html',context)
 
 def register(request):
