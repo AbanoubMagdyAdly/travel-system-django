@@ -108,19 +108,19 @@
             <p class="color-black-opacity-5"></p>
           </div>
         </div>
-      {% for l in location %}
         <div class="row">
+      {% for l in location %}
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="row justify-content-center mb-5">
               <div class="col-md-7">
-                  <img src="{% static 'images/locations/'%}{{ l.location_name }}.jpg" alt="Image" class="img-fluid">
+                  <img src="{% static 'images/locations/'%}{{ l.location_name }}.jpg" alt="Image"  width="350" height="250">
                 <h2 class="font-weight-light text-black text-center">{{ l.location_name }}</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapient</p>
               </div>
             </div>
           </div>
-        </div>
     {% endfor %}
+        </div>
       </div>
     </div>
 
